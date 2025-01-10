@@ -26,23 +26,4 @@ function calculateScore() {
     // Normalize UK percentage
     const ukPercentageScore = Math.min(ukPercentage / ukPercentageThreshold, 1);
     // Normalize absolute UK followers
-    const absoluteUKScore = Math.min(absoluteUKFollowers / absoluteUKThreshold, 1);
-    // Normalize engagement rate
-    const engagementScore = engagementRate / 10;
-    // Logarithmic scaling for follower count
-    const followerScore = Math.log10(followerCount);
-
-    // Calculate total score
-    const totalScore = (
-        weights.uk_percentage * ukPercentageScore +
-        weights.absolute_uk_followers * absoluteUKScore +
-        weights.engagement_rate * engagementScore +
-        weights.follower_count * (followerScore / 10) // Scale follower score to 0-1
-    );
-
-    // Display the results
-    document.getElementById("result").innerHTML = `
-        <p><strong>Calculated Score:</strong> ${totalScore.toFixed(2)}</p>
-        <p><strong>Absolute UK Followers:</strong> ${Math.round(absoluteUKFollowers)}</p>
-    `;
-}
+    const absoluteUKScore = Math.min(absoluteUKFollowers / absoluteUKThr
