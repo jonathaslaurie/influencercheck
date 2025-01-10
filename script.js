@@ -13,7 +13,15 @@ function calculateScore() {
     const followerCount = parseFloat(document.getElementById("follower_count").value);
     const ukPercentage = parseFloat(document.getElementById("uk_percentage").value);
     const engagementRate = parseFloat(document.getElementById("engagement_rate").value);
-    const absoluteUKFollowers = parseFloat(document.getElementById("absolute_uk_followers").value);
+
+    // Simple validation
+    if (isNaN(followerCount) || isNaN(ukPercentage) || isNaN(engagementRate)) {
+        alert("Please enter valid numbers in all fields.");
+        return;
+    }
+
+    // Calculate absolute UK followers
+    const absoluteUKFollowers = (followerCount * ukPercentage) / 100;
 
     // Normalize UK percentage
     const ukPercentageScore = Math.min(ukPercentage / ukPercentageThreshold, 1);
@@ -32,6 +40,9 @@ function calculateScore() {
         weights.follower_count * (followerScore / 10) // Scale follower score to 0-1
     );
 
-    // Display the result
-    document.getElementById("result").innerText = `The calculated score is: ${totalScore.toFixed(2)}`;
+    // Display the results
+    document.getElementById("result").innerHTML = `
+        <p><strong>Calculated Score:</strong> ${totalScore.toFixed(2)}</p>
+        <p><strong>Absolute UK Followers:</strong> ${Math.round(absoluteUKFollowers)}</p>
+    `;
 }
