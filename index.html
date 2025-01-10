@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Influencer Scoring Tool</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, button {
+            width: 100%;
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Influencer Scoring Tool</h1>
+    <form id="scoringForm">
+        <label for="follower_count">Total Followers:</label>
+        <input type="number" id="follower_count" name="follower_count" required>
+        
+        <label for="uk_percentage">UK Percentage:</label>
+        <input type="number" step="0.01" id="uk_percentage" name="uk_percentage" required>
+        
+        <label for="engagement_rate">Engagement Rate (%):</label>
+        <input type="number" step="0.01" id="engagement_rate" name="engagement_rate" required>
+        
+        <label for="absolute_uk_followers">Absolute UK Followers:</label>
+        <input type="number" id="absolute_uk_followers" name="absolute_uk_followers" required>
+        
+        <button type="button" onclick="calculateScore()">Calculate Score</button>
+    </form>
+    <h2 id="result"></h2>
+
+    <script src="script.js"></script>
+</body>
+</html>
