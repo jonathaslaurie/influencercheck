@@ -33,6 +33,19 @@
         button:hover {
             background-color: #0056b3;
         }
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+        }
+        #result p {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+        #result strong {
+            color: #007bff;
+        }
     </style>
 </head>
 <body>
@@ -49,7 +62,7 @@
         
         <button type="button" onclick="calculateScore()">Calculate Score</button>
     </form>
-    <h2 id="result"></h2>
+    <div id="result"></div>
 
     <script src="script.js"></script>
 </body>
