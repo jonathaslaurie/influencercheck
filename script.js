@@ -37,7 +37,7 @@ function calculateScore() {
     const weightedEngagementRate = engagementRate * Math.log10(followerCount);
     const engagementScore = Math.min(weightedEngagementRate / maxWeightedEngagement, 1);
     // Logarithmic scaling for follower count
-    const followerScore = Math.log10(followerCount) / 6; // Scale to 0-1
+    const followerScore = Math.log10(followerCount) / 10; // Scale to 0-1
     // Weight growth rate by platform size
     const weightedGrowthRate = growthRate * Math.log10(followerCount);
     const growthScore = Math.min(weightedGrowthRate / maxWeightedGrowth, 1);
